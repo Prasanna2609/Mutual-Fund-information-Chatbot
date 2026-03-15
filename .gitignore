@@ -1,0 +1,9 @@
+__pycache__/
+.env
+node_modules/
+*.log
+scheduler.log
+phase_4_embeddings_vectorstore/faiss_index/
+dist/
+build/
+.DS_Store

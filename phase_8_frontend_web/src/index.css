@@ -1,0 +1,229 @@
+:root {
+  --groww-green: #00D09C;
+  --bg-main: #F7F9FB;
+  --bg-white: #FFFFFF;
+  --text-primary: #1E1E1E;
+  --text-secondary: #6B7280;
+  --border-light: #E5E7EB;
+  --user-bubble: #00D09C;
+  --bot-bubble: #FFFFFF;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+#root {
+  width: 100%;
+  max-width: 800px;
+  height: 95vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+header {
+  height: 70px;
+  padding: 0 24px;
+  border-bottom: 1px solid var(--border-light);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: white;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-text {
+  font-size: 24px;
+  font-weight: 700;
+  color: #44475b;
+  letter-spacing: -0.5px;
+}
+
+.chat-container {
+  flex: 1;
+  overflow-y: auto;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: var(--bg-main);
+}
+
+.message {
+  max-width: 75%;
+  padding: 16px 20px;
+  border-radius: 16px;
+  line-height: 1.6;
+  font-size: 15px;
+  position: relative;
+  animation: fadeIn 0.2s ease-out;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.message.user {
+  align-self: flex-end;
+  background-color: var(--user-bubble);
+  color: #FFFFFF;
+  border-bottom-right-radius: 4px;
+  font-weight: 500;
+}
+
+.message.bot {
+  align-self: flex-start;
+  background-color: var(--bot-bubble);
+  color: var(--text-primary);
+  border: 1px solid var(--border-light);
+  border-bottom-left-radius: 4px;
+}
+
+.source-tag {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 12px;
+  padding: 4px 10px;
+  background: #f1f3f6;
+  border-radius: 6px;
+  font-size: 11px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.source-tag:hover {
+  background: #e5e7eb;
+}
+
+.input-area-wrapper {
+  padding: 16px 24px 24px;
+  background: white;
+  border-top: 1px solid var(--border-light);
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+  background: #F1F3F6;
+  border-radius: 10px;
+  padding: 4px 6px 4px 16px;
+  gap: 8px;
+  border: 1px solid transparent;
+  transition: all 0.2s;
+}
+
+.input-container:focus-within {
+  background: white;
+  border-color: var(--groww-green);
+  box-shadow: 0 0 0 4px rgba(0, 208, 156, 0.1);
+}
+
+input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  padding: 12px 0;
+  color: var(--text-primary);
+  font-size: 15px;
+  outline: none;
+}
+
+.send-btn {
+  background: var(--groww-green);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.send-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.send-btn:hover:not(:disabled) {
+  filter: brightness(0.95);
+}
+
+.typing-indicator {
+  padding: 8px 0;
+  font-size: 13px;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.accent-text {
+  color: var(--groww-green);
+  font-weight: 600;
+}
+
+/* Markdown Styles */
+.markdown-body {
+  font-family: inherit;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.markdown-body p {
+  margin-bottom: 8px;
+}
+
+.markdown-body p:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-body ul, .markdown-body ol {
+  margin-left: 20px;
+  margin-bottom: 8px;
+}
+
+.markdown-body li {
+  margin-bottom: 4px;
+}
+
+.markdown-body strong {
+  font-weight: 600;
+  color: var(--groww-green);
+}
