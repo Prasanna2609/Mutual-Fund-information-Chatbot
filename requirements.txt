@@ -1,3 +1,4 @@
+--extra-index-url https://download.pytorch.org/whl/cpu
 requests
 beautifulsoup4
 langchain
@@ -12,5 +13,7 @@ fastapi
 uvicorn
 python-dotenv
 pydantic
-brotli
 sentence-transformers
+torch==2.2.2+cpu
+scikit-learn
+brotli
