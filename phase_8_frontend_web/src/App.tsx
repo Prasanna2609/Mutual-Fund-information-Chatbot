@@ -77,7 +77,7 @@ const App: React.FC = () => {
     setLoading(true);
 
     try {
-      const response = await axios.post('http://localhost:8000/ask', {
+      const response = await axios.post(`${import.meta.env.VITE_API_URL}/ask`, {
         query: userMessage.text
       });
 
