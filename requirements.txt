@@ -1,0 +1,16 @@
+requests
+beautifulsoup4
+langchain
+langchain-community
+langchain-core
+langchain-huggingface
+langchain-groq
+faiss-cpu
+streamlit
+groq
+fastapi
+uvicorn
+python-dotenv
+pydantic
+brotli
+sentence-transformers
