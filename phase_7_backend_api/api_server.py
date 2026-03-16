@@ -41,7 +41,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-class QueryRequest(BaseModel):
+class QuestionRequest(BaseModel):
     question: str
 
 
@@ -57,7 +57,7 @@ class QueryResponse(BaseModel):
 chain = RAGChain()
 
 @app.post("/ask", response_model=QueryResponse)
-async def ask_question(request: QueryRequest):
+async def ask_question(request: QuestionRequest):
     query_text = request.question
     if not query_text:
 
