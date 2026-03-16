@@ -42,7 +42,8 @@ app.add_middleware(
 )
 
 class QueryRequest(BaseModel):
-    query: str
+    question: str
+
 
 class SourceItem(BaseModel):
     scheme_name: str
@@ -57,8 +58,9 @@ chain = RAGChain()
 
 @app.post("/ask", response_model=QueryResponse)
 async def ask_question(request: QueryRequest):
-    query_text = request.query
+    query_text = request.question
     if not query_text:
+
         raise HTTPException(status_code=400, detail="Query cannot be empty")
 
     try:

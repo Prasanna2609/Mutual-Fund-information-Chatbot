@@ -47,6 +47,17 @@ The React frontend has been verified for Vercel deployment:
 
 The frontend is now ready for deployment on Vercel or any other static site hosting service.
 
+## Phase 13 — Deployment Connectivity
+
+The system is now configured for synchronized deployment:
+1. **Frontend Environment**: Created `.env` in `phase_8_frontend_web/` and updated `App.tsx` to use `import.meta.env.VITE_API_URL`.
+2. **Backend CORS**: Confirmed that the FastAPI backend allows cross-origin requests, ensuring the Vercel frontend can communicate with the Railway backend.
+3. **Repository Sync**: All changes pushed to GitHub for immediate deployment.
+
+**Final Deployment Steps:**
+- **On Railway**: Ensure `GROQ_API_KEY` is set in the environment variables.
+- **On Vercel**: Add `VITE_API_URL` (pointing to your Railway domain) in the project settings before building.
+
 
 ## Phase 10 — GitHub Push
 
