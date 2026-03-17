@@ -25,8 +25,13 @@ class ResponseGenerator:
         if not context_chunks:
             return FALLBACK_MESSAGE
 
-        # Prepare context
-        context_text = "\n\n".join([c["chunk_text"] for c in context_chunks])
+        # Prepare context with both text and metadata
+        context_parts = []
+        for c in context_chunks:
+            meta_str = f"[Fund: {c.get('scheme_name')}, NAV: {c.get('nav')}, Expense Ratio: {c.get('expense_ratio')}, Category: {c.get('category')}]"
+            context_parts.append(f"{meta_str}\n{c['chunk_text']}")
+        
+        context_text = "\n\n".join(context_parts)
 
 
         # Format full prompt

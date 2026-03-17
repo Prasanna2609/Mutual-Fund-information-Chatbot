@@ -23,7 +23,7 @@ class MutualFundRetriever:
     def __init__(self):
         self.vector_store = load_vector_store()
         self._known_schemes = None
-        print("✓ FAISS Vector Store loaded into retriever.")
+        print("retriever loaded")
 
     def get_known_schemes(self) -> List[str]:
         """
