@@ -6,6 +6,8 @@ Designed to be run as a daily cron job.
 
 import torch
 import torch.nn as nn
+import builtins
+builtins.nn = nn
 
 import sys
 import logging

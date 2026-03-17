@@ -8,6 +8,8 @@ import sys
 from pathlib import Path
 import torch
 import torch.nn as nn
+import builtins
+builtins.nn = nn
 from langchain_community.vectorstores import FAISS
 from langchain_huggingface import HuggingFaceEmbeddings
 

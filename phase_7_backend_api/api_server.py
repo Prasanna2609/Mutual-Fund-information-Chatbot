@@ -12,6 +12,8 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import torch
 import torch.nn as nn
+import builtins
+builtins.nn = nn
 
 # Debugging print and startup check
 api_key = os.getenv("GROQ_API_KEY")
