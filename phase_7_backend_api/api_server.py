@@ -9,6 +9,8 @@ load_dotenv()
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
+import torch
+import torch.nn as nn
 
 # Debugging print and startup check
 api_key = os.getenv("GROQ_API_KEY")

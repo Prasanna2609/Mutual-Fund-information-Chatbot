@@ -6,6 +6,8 @@ Loads the FAISS vector store and implements the core retrieval function.
 import sys
 from pathlib import Path
 from typing import List
+import torch
+import torch.nn as nn
 
 # Add project root to path
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
