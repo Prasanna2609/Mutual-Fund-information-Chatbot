@@ -4,6 +4,9 @@ Orchestrates the full data refresh process from scraping to re-indexing.
 Designed to be run as a daily cron job.
 """
 
+import torch
+import torch.nn as nn
+
 import sys
 import logging
 from pathlib import Path

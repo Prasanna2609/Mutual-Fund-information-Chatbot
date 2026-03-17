@@ -4,6 +4,9 @@ Wraps the retriever to return structured retrieval results for any given query.
 Supports scheme-aware retrieval when a mutual fund name is detected in the query.
 """
 
+import torch
+import torch.nn as nn
+
 import sys
 from pathlib import Path
 from typing import List, Dict, Any
