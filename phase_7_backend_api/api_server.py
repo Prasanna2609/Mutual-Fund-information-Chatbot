@@ -55,10 +55,8 @@ class QueryResponse(BaseModel):
     answer: str
     sources: list[SourceItem] = []
 
-# Initialize RAG Chain and pre-load retriever
+# Initialize RAG Chain (retriever will load lazily via chain.query)
 chain = RAGChain()
-from phase_5_retrieval_pipeline.search_pipeline import _get_retriever
-_get_retriever()
 
 @app.post("/ask", response_model=QueryResponse)
 async def ask_question(request: QuestionRequest):

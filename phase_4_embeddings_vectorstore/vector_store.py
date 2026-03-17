@@ -19,7 +19,10 @@ from phase_1_project_setup.config import FAISS_INDEX_PATH, EMBEDDING_MODEL_NAME
 
 def get_embedding_model():
     """Initializes and returns the HuggingFace embedding model."""
-    return HuggingFaceEmbeddings(model_name=EMBEDDING_MODEL_NAME)
+    return HuggingFaceEmbeddings(
+        model_name=EMBEDDING_MODEL_NAME,
+        model_kwargs={'device': 'cpu'}
+    )
 
 def create_and_save_vector_store(texts, metadatas):
     """
