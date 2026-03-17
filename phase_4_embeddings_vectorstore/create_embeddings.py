@@ -6,6 +6,8 @@ Loads processed chunks, generates embeddings, and stores them in FAISS.
 import json
 import sys
 from pathlib import Path
+import torch
+import torch.nn as nn
 
 # Add project root to path
 PROJECT_ROOT = Path(__file__).resolve().parent.parent

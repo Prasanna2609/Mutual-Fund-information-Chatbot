@@ -30,7 +30,7 @@ The system is now fully operational with all requirements implemented.
 I have resolved the communication error between the frontend and backend:
 1. **API Contract Sync**: Synchronized the payload key to `question` in both `api_server.py` and `App.tsx` (previously `query`).
 2. **URL Sanitization**: Robustly sanitized the `VITE_API_URL` joining logic in the frontend to prevent double-slash or missing-slash errors during production runtime.
-3. **CORS Verification**: Confirmed that the backend allows requests from any origin, ensuring cross-platform connectivity.
+3. **Schema Alignment**: Renamed `QueryRequest` to `QuestionRequest` in `api_server.py` and ensured the frontend sends the `question` field in the JSON body, resolving 422 Unprocessable Entity errors during production communication.
 
 The system is now fully synchronized and ready for the final production deployment verification.
 

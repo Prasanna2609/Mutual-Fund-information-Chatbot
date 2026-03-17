@@ -6,6 +6,8 @@ Manages the FAISS vector database: initialization, storage, and persistence.
 import os
 import sys
 from pathlib import Path
+import torch
+import torch.nn as nn
 from langchain_community.vectorstores import FAISS
 from langchain_huggingface import HuggingFaceEmbeddings
 
