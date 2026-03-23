@@ -6,8 +6,11 @@ Supports scheme-aware retrieval when a mutual fund name is detected in the query
 
 import torch
 import torch.nn as nn
+import sys
 import builtins
 builtins.nn = nn
+sys.modules['torch'] = torch
+sys.modules['torch.nn'] = nn
 
 import sys
 from pathlib import Path

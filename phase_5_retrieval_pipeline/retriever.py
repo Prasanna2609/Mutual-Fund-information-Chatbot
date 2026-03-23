@@ -8,8 +8,11 @@ from pathlib import Path
 from typing import List
 import torch
 import torch.nn as nn
+import sys
 import builtins
 builtins.nn = nn
+sys.modules['torch'] = torch
+sys.modules['torch.nn'] = nn
 
 # Add project root to path
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
